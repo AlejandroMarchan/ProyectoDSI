@@ -1,3 +1,0 @@
-git remote add origin https://github.com/AlejandroMarchan/ProyectoDSI.git
-
-git push -u origin master
