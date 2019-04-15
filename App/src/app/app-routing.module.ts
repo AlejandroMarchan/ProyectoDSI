@@ -26,7 +26,8 @@ const routes: Routes = [
   { 
     path: 'acerca-de',
     component: AcercaDePage
-  }
+  },  { path: 'registro', loadChildren: './registro/registro.module#RegistroPageModule' }
+
 
 ];
 

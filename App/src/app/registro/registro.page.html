@@ -4,7 +4,7 @@
       <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
     </ion-buttons>
     <ion-title>
-      Iniciar Sesión
+      Registrarse
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -23,11 +23,13 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button expand="block" (click)="login()">Iniciar Sesión</ion-button>
+        <ion-input placeholder="Confirmar Contraseña" type="password" [(ngModel)]="password2"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="registro()">Crear cuenta</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div  id="Register" (click)="abrirRegistro()">
-    <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Si no tienes cuenta, regístrate pulsando aquí</b></p>
-  </div>
 </ion-content>

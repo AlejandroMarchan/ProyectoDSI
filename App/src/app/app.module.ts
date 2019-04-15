@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginPage } from './login/login.page';
 import { HomePage } from './home/home.page';
 import { ListPage } from './list/list.page';
+import { RegistroPage } from './registro/registro.page';
 
 // Servicios
 import { VuelosService } from './services/vuelos.service';
@@ -22,9 +23,10 @@ import { FormsModule } from '@angular/forms';
 import { AcercaDePage } from './acerca-de/acerca-de.page';
 import { HttpModule }    from '@angular/http';
 
+
 @NgModule({
-  declarations: [AppComponent, LoginPage, HomePage, ListPage, AcercaDePage],
-  entryComponents: [LoginPage, HomePage, ListPage, AcercaDePage],
+  declarations: [AppComponent, LoginPage, HomePage, ListPage, AcercaDePage, RegistroPage],
+  entryComponents: [LoginPage, HomePage, ListPage, AcercaDePage, RegistroPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
