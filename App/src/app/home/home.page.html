@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons style="margin-bottom: 5px" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title id="titulo">
+      VuelaCool
+    </ion-title>
+    <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Iniciar Sesión</b></p>
+    </div>
+    <div *ngIf="usuarioService.logged" id="logIn" (click)="cerrarSesion()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-out"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Cerrar Sesión</b></p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="">
+      <ion-searchbar (ionInput)="buscarOrigen($event)" placeholder="Busque un lugar..."></ion-searchbar>
+    </div>
+    <div *ngFor="let vuelo of copiaVuelos; let i = index">
+      <!-- <div *ngIf="!vuelo.reservado"> -->
+        <ion-card class="welcome-card">
+          <ion-card-header>
+            <ion-card-title><img [src]="vuelo.origen.bandera" style="width: 25px; display:inline-block"> {{ vuelo.origen.ciudad }} <ion-icon name="arrow-round-forward"></ion-icon>&nbsp; <img [src]="vuelo.destino.bandera" style="width: 25px; display:inline-block"> {{ vuelo.destino.ciudad }}</ion-card-title>
+            <ion-button [disabled]="vuelo.reservado" style="float: right;z-index:99;" color="primary" (click)="reservaVuelo(vuelo.idVuelo);vuelo.reservado = true;">Reservar</ion-button>
+            <ion-card-subtitle style="width: 61%;">Fecha Salida: {{ vuelo.fechaSalida | date:'d/M/yy, HH:mm' }}</ion-card-subtitle>
+            <ion-card-subtitle>Precio: {{ vuelo.precio }}€</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ vuelo.reservado }} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    <!-- </div> -->
+</ion-content>
