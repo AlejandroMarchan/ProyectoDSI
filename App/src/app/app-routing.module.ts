@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePage } from './home/home.page';
-import { ListPage } from './list/list.page';
 import { LoginPage } from './login/login.page';
 import { AcercaDePage } from './acerca-de/acerca-de.page';
+import { RegistroPage } from './registro/registro.page';
 
 const routes: Routes = [
   {
@@ -16,19 +16,17 @@ const routes: Routes = [
     component: HomePage
   },
   {
-    path: 'list',
-    component: ListPage
-  },
-  {
     path: 'login',
     component: LoginPage
   },
-  { 
+  {
     path: 'acerca-de',
     component: AcercaDePage
-  },  { path: 'registro', loadChildren: './registro/registro.module#RegistroPageModule' }
-
-
+  },
+  {
+    path: 'registro',
+    component: RegistroPage
+  }
 ];
 
 @NgModule({

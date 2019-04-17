@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { VuelosService } from '../services/vuelos.service';
 import { ModalController, AlertController, ToastController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
 import { UsuarioService } from '../services/usuario.service';
@@ -27,19 +26,8 @@ export class HomePage {
 
   public paises;
 
-  constructor(public toastCtrl: ToastController,public vuelosService: VuelosService, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
-    this.vuelosService.loadPaises().subscribe(
-      data => {
-        console.log(data);
-        this.paises = data;
-        this.vuelosService.generateFligths(data);
-        this.copiaVuelos = this.vuelosService.vuelos.slice();
-      },
-      error => {
-        console.log('Error al cargar los paises: ');
-        console.log(error);
-      }
-    );
+  constructor(public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
+
   }
 
   async abrirLogin(){
@@ -65,7 +53,7 @@ export class HomePage {
           handler: async () => {
             this.usuarioService.logged = false;
             const toast = await this.toastCtrl.create({
-              message: '¡Hasta pronto ' + this.usuarioService.usuario.username + '!',
+              message: '¡Hasta pronto ' + this.usuarioService.username + '!',
               duration: 2500
             });
             toast.present();
@@ -78,33 +66,19 @@ export class HomePage {
   }
 
   buscarOrigen(ev: any) {
-    // Reset items back to all of the items
-    this.copiaVuelos = this.vuelosService.vuelos.slice();
-
-    // set val to the value of the searchbar
-    const val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.copiaVuelos = this.vuelosService.vuelos.filter((vuelo) => {
-        return (vuelo.origen.ciudad.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      });
-      console.log(this.copiaVuelos);
-    }
-  }
-
-  async reservaVuelo(idVuelo){
-    // console.log('reservado');
-    if(!this.usuarioService.logged){
-      this.abrirLogin();
-      const toast = await this.toastCtrl.create({
-        message: 'Por favor, inicie sesisión para poder reservar vuelos',
-        duration: 2500
-      });
-      toast.present();
-    }else{
-      this.vuelosService.vuelos[idVuelo].reservado = true;
-    }
+    // // Reset items back to all of the items
+    // this.copiaVuelos = this.vuelosService.vuelos.slice();
+    //
+    // // set val to the value of the searchbar
+    // const val = ev.target.value;
+    //
+    // // if the value is an empty string don't filter the items
+    // if (val && val.trim() != '') {
+    //   this.copiaVuelos = this.vuelosService.vuelos.filter((vuelo) => {
+    //     return (vuelo.origen.ciudad.toLowerCase().indexOf(val.toLowerCase()) > -1);
+    //   });
+    //   console.log(this.copiaVuelos);
+    // }
   }
 
 }
