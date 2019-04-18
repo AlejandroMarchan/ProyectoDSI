@@ -4,5 +4,6 @@ export interface Usuario {
   nombre: string,
   apellidos: string,
   bonos: string,
-  telefono: number
+  telefono: number,
+  tipo: string //admin, comun, trabajador
 }
