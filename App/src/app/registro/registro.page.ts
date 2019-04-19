@@ -27,7 +27,7 @@ export class RegistroPage {
       message: 'La segunda contraseña y la primera no coinciden.',
       buttons: ['Vale']
     });
-    if(!this.usuarioService || !this.password || !this.password2){
+    if(!this.usuario || !this.password || !this.password2){
       return await alert.present();
     }
     if(this.password!=this.password2){

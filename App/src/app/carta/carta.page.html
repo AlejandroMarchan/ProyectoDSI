@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons style="margin-bottom: 5px" slot="start">
+            <ion-icon style="font-size: 25px;margin-left:10px" name="arrow-back" button [routerLink]="['/home']"></ion-icon>
+        </ion-buttons>
+        <ion-title id="titulo">
+          UniMeal
+        </ion-title>
+        <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
+          <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
+          <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Iniciar Sesión</b></p>
+        </div>
+        <div *ngIf="usuarioService.logged" id="logIn" (click)="cerrarSesion()">
+          <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-out"></ion-icon>
+          <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Cerrar Sesión</b></p>
+        </div>
+      </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-grid>
+      <ion-row>
+       
+        <ion-col>
+            <p style="font-size: 22px; margin: 0px; padding: 0px;"><b>Comida</b></p>
+            <br>
+            <div *ngFor="let item of carta">
+                {{ item.comida }}
+            </div>
+          </ion-col>
+
+      <ion-col>
+          <p style="font-size: 22px; margin: 0px; padding: 0px;"><b>Precio</b></p>
+          <br>
+    <div *ngFor="let item of carta">
+        {{ item.precio }}
+    </div>
+  </ion-col>
+  <ion-col  *ngIf="cartaService.editar">
+      <p style="font-size: 22px; margin: 0px; padding: 0px;"><b>Borrar</b></p>
+      <br>
+<div *ngFor="let item of carta">
+    <ion-icon name="close" (click)="Borrar(item)"></ion-icon>
+</div>
+</ion-col>
+  </ion-row>    
+  </ion-grid>
+  <div  *ngIf="usuarioService.logged" >
+      <ion-button *ngIf="!cartaService.editar" expand="block" (click)="EditarCarta()">Editar</ion-button>
+    </div>
+    <div  *ngIf="cartaService.editar" >
+        <ion-button expand="block" (click)="Anadir()">Añadir</ion-button>
+      </div>
+</ion-content>
