@@ -13,6 +13,7 @@ export class RegistroPage {
   public usuario: string = '';
   public password: string = '';
   public password2: string = '';
+  public registrado = false;
 
   constructor(public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController, public toastCtrl: ToastController) { }
 
@@ -33,18 +34,19 @@ export class RegistroPage {
     if(this.password!=this.password2){
       return await alert2.present();
     }
-    let noExiste = true;
     this.usuarioService.getUsuario(this.usuario).subscribe(
       async data => {
+        console.log('llamada')
         console.log(data);
-        if(data) noExiste = false;
-        if(noExiste){
+        if(!data){
+          this.registrado = true;
           let usuario: Usuario = {
             contrasena: this.password,
             nombre: '',
             apellidos: '',
             bonos: '',
-            telefono: null
+            telefono: null,
+            tipo: 'comun'
           };
           this.usuarioService.addUsuario(usuario, this.usuario);
           this.usuarioService.username = this.usuario;
@@ -55,7 +57,7 @@ export class RegistroPage {
           });
           toast.present();
           this.closeModal();
-        }else{
+        }else if(!this.registrado){
           const usuarioExiste = await this.alertCtrl.create({
             header: 'Error Nombre Usuario',
             message: 'El nombre de usuario que introdujo pertenece a otro usuario de la plataforma, por favor elija uno diferente.',
