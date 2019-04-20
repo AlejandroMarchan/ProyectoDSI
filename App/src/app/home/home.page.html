@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title id="titulo">
-      VuelaCool
+      UniMeal
     </ion-title>
     <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
       <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
@@ -20,5 +20,31 @@
 <ion-content>
     <div class="">
       <ion-searchbar (ionInput)="buscarOrigen($event)" placeholder="Busque un lugar..."></ion-searchbar>
+    </div>
+    <div class="container">
+      <div class = "row">
+        <div class="leftbox">
+          <ion-icon style="font-size: 115px;" name="log-in"></ion-icon>
+        </div>
+        <div class="rightbox">
+          <ion-icon style="font-size: 115px;" name="log-out"></ion-icon>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="leftbox">
+          <ion-icon style="font-size: 115px;" name="log-in"></ion-icon>
+        </div>
+        <div class="rightbox">
+          <ion-icon style="font-size: 115px;" name="log-out"></ion-icon>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="leftbox">
+          <ion-icon style="font-size: 115px;" name="log-in"></ion-icon>
+        </div>
+        <div class="rightbox">
+          <ion-icon style="font-size: 115px;" name="log-out"></ion-icon>
+        </div>
+      </div>
     </div>
 </ion-content>
