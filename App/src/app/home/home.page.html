@@ -22,59 +22,47 @@
       <ion-searchbar (ionInput)="buscarOrigen($event)" placeholder="Busque un lugar..."></ion-searchbar>
     </div>
     <div class="container">
-      <div class = "row">
-        <div class="leftbox">
+          <button  ion-button icon-start class="boton">
+            <div class="top">
+              <ion-icon style="font-size: 110px;" name="restaurant"></ion-icon>
+            </div>
+              <p class="title">Menú</p>
+          </button>
+          <button ion-button icon-start class="boton">
+            <div class="top">
+              <ion-icon style="font-size: 110px;" name="list-box"></ion-icon>
+            </div>
+            <p class="title">Carta</p>
+          </button>
+        <button  ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='comun' && usuarioService.logged ">
           <div class="top">
-          <ion-icon style="font-size: 100px;" name="restaurant"></ion-icon>
+            <ion-icon style="font-size: 110px;" name="cash"></ion-icon>
           </div>
-          <div class="bottom">
-          <p>Menú</p>
-          </div>
-        </div>
-        <div class="rightbox">
+          <p class="title">Bonos</p>
+        </button>
+        <button ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='admin'|| usuarioService.tipo=='comun'">
           <div class="top">
-          <ion-icon style="font-size: 100px;" name="list-box"></ion-icon>
+            <ion-icon style="font-size: 110px;" name="basket"></ion-icon>
           </div>
-          <div class="bottom">
-          <p>Carta</p>
+          <p class="title">Pedidos</p>
+        </button>
+        <button ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='trabajador' && usuarioService.logged ">
+          <div class="top">
+            <ion-icon style="font-size: 110px;" name="card"></ion-icon>
           </div>
-        </div>
+          <p class="title">Canjear Bono</p>
+        </button>
+        <button ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='comun' && usuarioService.logged" >
+          <div class="top">
+            <ion-icon style="font-size: 110px;" name="contact"></ion-icon>
+          </div>
+          <p class="title">Perfil</p>
+        </button>
+        <button ion-button icon-start class="boton">
+          <div class="top">
+            <ion-icon style="font-size: 110px;" name="information-circle"></ion-icon>
+          </div>
+          <p class="title">Acerca de</p>
+        </button>
       </div>
-      <div class = "row">
-        <div class="leftbox">
-          <div class="top">
-          <ion-icon style="font-size: 115px;" name="cash"></ion-icon>
-          </div>
-          <div class="bottom">
-          <p>Bonos</p>
-          </div>
-        </div>
-        <div class="rightbox">
-          <div class="top">
-          <ion-icon style="font-size: 100px;" name="basket"></ion-icon>
-          </div>
-          <div class="bottom">
-          <p>Pedidos</p>
-          </div>
-        </div>
-      </div>
-      <div class = "row">
-        <div class="leftbox">
-          <div class="top">
-          <ion-icon style="font-size: 100px;" name="contact"></ion-icon>
-          </div>
-          <div class="bottom">
-          <p>Perfil</p>
-          </div>
-        </div>
-        <div class="rightbox">
-          <div class="top">
-          <ion-icon style="font-size: 100px;" name="information-circle"></ion-icon>
-          </div>
-          <div class="bottom">
-          <p>Acerca De</p>
-          </div>
-        </div>
-      </div>
-    </div>
 </ion-content>

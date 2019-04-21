@@ -16,6 +16,8 @@ export class UsuarioService {
 
   public username: string = '';
 
+  public tipo: string = '';
+
   constructor(db: AngularFirestore) {
     this.usuariosCollection = db.collection<Usuario>('usuarios');
 

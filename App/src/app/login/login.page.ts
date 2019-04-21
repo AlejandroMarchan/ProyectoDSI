@@ -40,6 +40,7 @@ export class LoginPage {
             toast.present();
             this.usuarioService.logged = true;
             this.usuarioService.username = this.usuario;
+            this.usuarioService.tipo = data.tipo;
             this.closeModal();
           } else{
             return await loginIncorrecto.present();

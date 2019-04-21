@@ -36,8 +36,6 @@ export class RegistroPage {
     }
     this.usuarioService.getUsuario(this.usuario).subscribe(
       async data => {
-        console.log('llamada')
-        console.log(data);
         if(!data){
           this.registrado = true;
           let usuario: Usuario = {
@@ -51,6 +49,7 @@ export class RegistroPage {
           this.usuarioService.addUsuario(usuario, this.usuario);
           this.usuarioService.username = this.usuario;
           this.usuarioService.logged = true;
+          this.usuarioService.tipo = data.tipo;
           const toast = await this.toastCtrl.create({
             message: this.usuario + ', su cuenta ha sido creada correctamente',
             duration: 2500
