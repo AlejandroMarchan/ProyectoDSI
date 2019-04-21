@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ModalController, AlertController, ToastController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
 import { UsuarioService } from '../services/usuario.service';
+import { CartaService } from '../services/carta.service';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,7 @@ export class HomePage {
 
   public paises;
 
-  constructor(public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
+  constructor(public cartaService: CartaService,public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
 
   }
 
@@ -38,6 +39,7 @@ export class HomePage {
   }
 
   async cerrarSesion(){
+    this.cartaService.editar==false;
     const alert = await this.alertCtrl.create({
       header: 'Cerrar Sesión',
       message: '¿Desea cerrar sesión?',

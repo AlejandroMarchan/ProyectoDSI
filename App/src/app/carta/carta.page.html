@@ -45,10 +45,12 @@
 </ion-col>
   </ion-row>    
   </ion-grid>
-  <div  *ngIf="usuarioService.logged" >
+  <div *ngIf="usuarioService.logged ">
+  <div  *ngIf="usuarioService.tipo=='admin'|| usuarioService.tipo=='trabajador' " >
       <ion-button *ngIf="!cartaService.editar" expand="block" (click)="EditarCarta()">Editar</ion-button>
     </div>
     <div  *ngIf="cartaService.editar" >
         <ion-button expand="block" (click)="Anadir()">Añadir</ion-button>
       </div>
+    </div>
 </ion-content>

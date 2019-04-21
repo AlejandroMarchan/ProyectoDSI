@@ -44,7 +44,8 @@ export class CartaPage implements OnInit {
 
 
   async cerrarSesion(){
-    const alert = await this.alertCtrl.create({
+    this.cartaService.editar==false;
+    const alert = await this.alertCtrl.create({  
       header: 'Cerrar Sesión',
       message: '¿Desea cerrar sesión?',
       buttons: [
