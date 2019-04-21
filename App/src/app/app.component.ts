@@ -19,6 +19,11 @@ export class AppComponent {
       title: 'Acerca de',
       url: '/acerca-de',
       icon: 'information-circle'
+    },
+    {
+      title: 'Carta',
+      url: '/carta',
+      icon: 'book'
     }
   ];
 

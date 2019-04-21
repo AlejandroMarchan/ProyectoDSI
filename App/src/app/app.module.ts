@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginPage } from './login/login.page';
 import { HomePage } from './home/home.page';
 import { RegistroPage } from './registro/registro.page';
+import { CartaPage } from './carta/carta.page';
 
 // Servicios
 import { UsuarioService } from './services/usuario.service';
@@ -23,11 +24,12 @@ import { HttpModule }    from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AnadirPage } from './anadir/anadir.page';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage],
-  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage],
+  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage],
+  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
