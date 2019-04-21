@@ -20,30 +20,30 @@
 <ion-content padding>
   <ion-grid>
       <ion-row>
-       
+
         <ion-col>
-            <p style="font-size: 22px; margin: 0px; padding: 0px;"><b>Comida</b></p>
+            <p class="title" style="font-size: 22px; margin: 0px; " ><b>Comida</b></p>
             <br>
             <div *ngFor="let item of carta">
-                {{ item.comida }}
+                <p class="text">{{ item.comida }}</p>
             </div>
           </ion-col>
 
       <ion-col>
-          <p style="font-size: 22px; margin: 0px; padding: 0px;"><b>Precio</b></p>
+          <p class="title" style="font-size: 22px; margin: 0px; "><b>Precio</b></p>
           <br>
     <div *ngFor="let item of carta">
-        {{ item.precio }}
+        <p class="text">{{ item.precio }} €</p>
     </div>
   </ion-col>
   <ion-col  *ngIf="cartaService.editar">
-      <p style="font-size: 22px; margin: 0px; padding: 0px;"><b>Borrar</b></p>
+      <p class="title" style="font-size: 22px; margin: 0px; "><b>Borrar</b></p>
       <br>
 <div *ngFor="let item of carta">
-    <ion-icon name="close" (click)="Borrar(item)"></ion-icon>
+    <ion-icon   name="close" (click)="Borrar(item)"></ion-icon>
 </div>
 </ion-col>
-  </ion-row>    
+  </ion-row>
   </ion-grid>
   <div *ngIf="usuarioService.logged ">
   <div  *ngIf="usuarioService.tipo=='admin'|| usuarioService.tipo=='trabajador' " >
