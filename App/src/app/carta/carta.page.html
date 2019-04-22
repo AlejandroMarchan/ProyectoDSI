@@ -4,7 +4,7 @@
             <ion-icon style="font-size: 25px;margin-left:10px" name="arrow-back" button [routerLink]="['/home']"></ion-icon>
         </ion-buttons>
         <ion-title id="titulo">
-          UniMeal
+          Carta
         </ion-title>
         <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
           <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
@@ -40,7 +40,7 @@
       <p class="title" style="font-size: 22px; margin: 0px; "><b>Borrar</b></p>
       <br>
 <div *ngFor="let item of carta">
-    <ion-icon   name="close" (click)="Borrar(item)"></ion-icon>
+    <ion-icon  class="text"  name="close" (click)="Borrar(item)"></ion-icon>
 </div>
 </ion-col>
   </ion-row>

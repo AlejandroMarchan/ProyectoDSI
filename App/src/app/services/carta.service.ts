@@ -43,7 +43,7 @@ export class CartaService {
     return this.cartaCollection.doc(id).set(carta);
   }
 
-  removeCarta(id) {
+  removeCarta(id: string) {
     return this.cartaCollection.doc(id).delete();
   }
 }

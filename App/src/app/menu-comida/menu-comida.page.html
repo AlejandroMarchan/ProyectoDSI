@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons style="margin-bottom: 5px" slot="start">
+          <ion-icon style="font-size: 25px;margin-left:10px" name="arrow-back" button [routerLink]="['/home']"></ion-icon>
+      </ion-buttons>
+      <ion-title id="titulo">
+        Menu
+      </ion-title>
+      <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
+        <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
+        <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Iniciar Sesión</b></p>
+      </div>
+      <div *ngIf="usuarioService.logged" id="logIn" (click)="cerrarSesion()">
+        <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-out"></ion-icon>
+        <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Cerrar Sesión</b></p>
+      </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+
+          <div *ngFor="let item of menu">
+              <p class="title" style="font-size: 22px; margin: 0px; ">{{item.nombre}}</p>
+              <p class="text" >{{ item.plato1 }}</p>
+              <p class="text" >{{ item.plato2 }}</p>
+              <p class="text" >{{ item.plato3 }}</p>
+          </div>
+</ion-list>
+<div *ngIf="usuarioService.logged ">
+<div  *ngIf="usuarioService.tipo=='admin'|| usuarioService.tipo=='trabajador' " >
+    <ion-button *ngIf="!menuService.editar" expand="block" (click)="EditarMenu()">Editar</ion-button>
+  </div>
+  </div>
+</ion-content>
