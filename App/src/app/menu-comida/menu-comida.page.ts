@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Carta } from '../interfaces/carta';
-import { CartaService } from '../services/carta.service';
 import { ModalController, AlertController, ToastController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
 import { UsuarioService } from '../services/usuario.service';
-import { AnadirPage } from '../anadir/anadir.page';
+import { Menu } from '../interfaces/menu';
+import { MenuService } from '../services/menu.service';
+import { NuevoMenuPage } from '../nuevo-menu/nuevo-menu.page';
 
 @Component({
-  selector: 'app-carta',
-  templateUrl: './carta.page.html',
-  styleUrls: ['./carta.page.scss'],
+  selector: 'app-menu-comida',
+  templateUrl: './menu-comida.page.html',
+  styleUrls: ['./menu-comida.page.scss'],
 })
-export class CartaPage implements OnInit {
+export class MenuComidaPage implements OnInit {
  
-  carta: Carta[];
+  menu: Menu[];
   public editar: boolean = false;
-  constructor(private cartaService: CartaService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){}
+  constructor(private menuService: MenuService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){}
 
  
   async ngOnInit() {
-    this.cartaService.getCarta().subscribe( async data => {
-      this.carta = data;
+    this.menuService.getCarta().subscribe( async data => {
+      this.menu = data;
     });
   }
   async abrirLogin(){
@@ -29,22 +29,16 @@ export class CartaPage implements OnInit {
     });
     await loginModal.present();
   }
-  async EditarCarta(){
-    this.cartaService.editar=true;
-  }
-  async Borrar(item: Carta){
-    this.cartaService.removeCarta(item.comida);
-  }
-  async Anadir(){
-    let anadirModal: HTMLIonModalElement = await this.modalCtrl.create({
-          component: AnadirPage
+  async EditarMenu(){
+    let nuevomenuModal: HTMLIonModalElement = await this.modalCtrl.create({
+          component: NuevoMenuPage
     });
-    await anadirModal.present();
+    await nuevomenuModal.present();
   }
 
 
   async cerrarSesion(){
-    this.cartaService.editar==false;
+    this.menuService.editar==false;
     const alert = await this.alertCtrl.create({  
       header: 'Cerrar Sesión',
       message: '¿Desea cerrar sesión?',

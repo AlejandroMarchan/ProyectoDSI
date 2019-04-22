@@ -20,7 +20,7 @@ export class AnadirPage{
   async anadir(){
     const alert = await this.alertCtrl.create({
       header: 'Campo vacío',
-      message: 'Por favor, rellene todos los campos para iniciar sesión.',
+      message: 'Por favor, rellene todos los campos para añadir la comida.',
       buttons: ['Vale']
     });
     if(!this.comida || !this.precio){
@@ -55,7 +55,7 @@ export class AnadirPage{
       },
       async error => {
         const toast = await this.toastCtrl.create({
-          message: 'Se produjo el siguiente error al registrarse: ' + error,
+          message: 'Se produjo el siguiente error al añadir la comida: ' + error,
           duration: 4500
         });
         toast.present();

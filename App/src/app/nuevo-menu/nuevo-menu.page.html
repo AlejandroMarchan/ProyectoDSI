@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
+      </ion-buttons>
+      <ion-title>
+        Actualizar
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-list>
+          
+          
+
+                  <p class="title" style="font-size: 22px; margin: 0px; ">Primero</p>
+                  <ion-input placeholder="plato1" type="text" [(ngModel)]="prim1"></ion-input>
+                  <ion-input placeholder="plato2" type="text" [(ngModel)]="prim2"></ion-input>
+                  <ion-input placeholder="plato3" type="text" [(ngModel)]="prim3"></ion-input>
+                  <p class="title" style="font-size: 22px; margin: 0px; ">Segundo</p>
+                  <ion-input placeholder="plato1" type="text" [(ngModel)]="seg1"></ion-input>
+                  <ion-input placeholder="plato2" type="text" [(ngModel)]="seg2"></ion-input>
+                  <ion-input placeholder="plato3" type="text" [(ngModel)]="seg3"></ion-input>
+                  <p class="title" style="font-size: 22px; margin: 0px; ">Postre</p>
+                  <ion-input placeholder="plato1" type="text" [(ngModel)]="pos1"></ion-input>
+                  <ion-input placeholder="plato2" type="text" [(ngModel)]="pos2"></ion-input>
+                  <ion-input placeholder="plato3" type="text" [(ngModel)]="pos3"></ion-input>
+
+          <ion-button expand="block" (click)="actualizar();" >Actualizar</ion-button>
+        </ion-list>
+  </ion-content>
+  

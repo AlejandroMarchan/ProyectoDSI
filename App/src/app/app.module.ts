@@ -25,11 +25,13 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AnadirPage } from './anadir/anadir.page';
+import { MenuComidaPage } from './menu-comida/menu-comida.page';
+import { NuevoMenuPage } from './nuevo-menu/nuevo-menu.page';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage],
-  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage],
+  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage],
+  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

@@ -6,6 +6,8 @@ import { AcercaDePage } from './acerca-de/acerca-de.page';
 import { RegistroPage } from './registro/registro.page';
 import { CartaPage } from './carta/carta.page';
 import { AnadirPage } from './anadir/anadir.page';
+import { MenuComidaPage } from './menu-comida/menu-comida.page';
+import { NuevoMenuPage } from './nuevo-menu/nuevo-menu.page';
 
 
 const routes: Routes = [
@@ -35,7 +37,13 @@ const routes: Routes = [
   },
   { path: 'anadir', 
 component: AnadirPage
-}
+},
+  { path: 'menu-comida', component: MenuComidaPage
+},
+  { path: 'nuevo-menu',
+   component: NuevoMenuPage }
+
+
 ];
 
 @NgModule({
