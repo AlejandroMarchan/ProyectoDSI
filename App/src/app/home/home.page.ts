@@ -67,20 +67,4 @@ export class HomePage {
     await alert.present();
   }
 
-  buscarOrigen(ev: any) {
-    // // Reset items back to all of the items
-    // this.copiaVuelos = this.vuelosService.vuelos.slice();
-    //
-    // // set val to the value of the searchbar
-    // const val = ev.target.value;
-    //
-    // // if the value is an empty string don't filter the items
-    // if (val && val.trim() != '') {
-    //   this.copiaVuelos = this.vuelosService.vuelos.filter((vuelo) => {
-    //     return (vuelo.origen.ciudad.toLowerCase().indexOf(val.toLowerCase()) > -1);
-    //   });
-    //   console.log(this.copiaVuelos);
-    // }
-  }
-
 }
