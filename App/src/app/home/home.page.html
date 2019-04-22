@@ -20,7 +20,6 @@
 <ion-content>
     <div class="">
       <ion-searchbar (ionInput)="buscarOrigen($event)" placeholder="Busque un lugar..."></ion-searchbar>
-<<<<<<< HEAD
     </div> -->
   <ion-grid>
     <ion-row align-items-center>
@@ -60,51 +59,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-=======
-    </div>
-    <div class="container">
-          <button  ion-button icon-start class="boton" [routerLink]="['/menu-comida']">
-            <div class="top">
-              <ion-icon style="font-size: 110px;" name="restaurant"></ion-icon>
-            </div>
-              <p class="title">Menú</p>
-          </button>
-          <button ion-button icon-start class="boton" [routerLink]="['/carta']">
-            <div class="top">
-              <ion-icon style="font-size: 110px;" name="list-box"></ion-icon>
-            </div>
-            <p class="title">Carta</p>
-          </button>
-        <button  ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged" >
-          <div class="top">
-            <ion-icon style="font-size: 110px;" name="cash"></ion-icon>
-          </div>
-          <p class="title">Bonos</p>
-        </button>
-        <button ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged">
-          <div class="top">
-            <ion-icon style="font-size: 110px;" name="basket"></ion-icon>
-          </div>
-          <p class="title">Pedidos</p>
-        </button>
-        <button ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='trabajador' && usuarioService.logged || usuarioService.tipo=='admin' && usuarioService.logged">
-          <div class="top">
-            <ion-icon style="font-size: 110px;" name="card"></ion-icon>
-          </div>
-          <p class="title">Canjear Bono</p>
-        </button>
-        <button ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged" >
-          <div class="top">
-            <ion-icon style="font-size: 110px;" name="contact"></ion-icon>
-          </div>
-          <p class="title">Perfil</p>
-        </button>
-        <button ion-button icon-start class="boton" [routerLink]="['/acerca-de']" >
-          <div class="top">
-            <ion-icon style="font-size: 110px;" name="information-circle"></ion-icon>
-          </div>
-          <p class="title">Acerca de</p>
-        </button>
-      </div>
->>>>>>> ce980cab7bcf9435327369abb1a6533908eb8b1f
 </ion-content>
