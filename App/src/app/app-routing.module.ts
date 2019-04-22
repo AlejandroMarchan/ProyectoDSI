@@ -32,16 +32,22 @@ const routes: Routes = [
     path: 'registro',
     component: RegistroPage
   },
-  { path: 'carta',
-   component: CartaPage
+  {
+    path: 'carta',
+    component: CartaPage
   },
-  { path: 'anadir', 
-component: AnadirPage
-},
-  { path: 'menu-comida', component: MenuComidaPage
-},
-  { path: 'nuevo-menu',
-   component: NuevoMenuPage }
+  {
+    path: 'anadir',
+    component: AnadirPage
+  },
+  {
+    path: 'menu-comida',
+    component: MenuComidaPage
+  },
+  {
+    path: 'nuevo-menu',
+    component: NuevoMenuPage
+  }
 
 
 ];
