@@ -18,22 +18,55 @@
 </ion-header>
 
 <ion-content>
-    <div class="">
+    <!-- <div class="">
       <ion-searchbar (ionInput)="buscarOrigen($event)" placeholder="Busque un lugar..."></ion-searchbar>
-    </div>
-    <div class="container">
-          <button  ion-button icon-start class="boton">
-            <div class="top">
-              <ion-icon style="font-size: 110px;" name="restaurant"></ion-icon>
-            </div>
-              <p class="title">Menú</p>
-          </button>
+    </div> -->
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="6" >
+          <ion-icon style="font-size: 110px;text-align: center;" name="restaurant"></ion-icon>
+          <p class="title">Menú</p>
+      </ion-col>
+      <ion-col size="6" [routerLink]="['/carta']">
+          <ion-icon style="font-size: 110px;text-align: center;" name="list-box"></ion-icon>
+          <p class="title">Carta</p>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col size="6" >
+          <ion-icon style="font-size: 110px;text-align: center;" name="restaurant"></ion-icon>
+          <p class="title">Menú</p>
+      </ion-col>
+      <ion-col size="6" [routerLink]="['/carta']">
+          <ion-icon style="font-size: 110px;text-align: center;" name="list-box"></ion-icon>
+          <p class="title">Carta</p>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col size="6" >
+          <ion-icon style="font-size: 110px;text-align: center;" name="restaurant"></ion-icon>
+          <p class="title">Menú</p>
+      </ion-col>
+      <ion-col size="6" [routerLink]="['/carta']">
+          <ion-icon style="font-size: 110px;text-align: center;" name="list-box"></ion-icon>
+          <p class="title">Carta</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
           <button ion-button icon-start class="boton" [routerLink]="['/carta']">
             <div class="top">
               <ion-icon style="font-size: 110px;" name="list-box"></ion-icon>
             </div>
             <p class="title">Carta</p>
           </button>
+        </div>
+      </div>
         <button  ion-button icon-start class="boton" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged" >
           <div class="top">
             <ion-icon style="font-size: 110px;" name="cash"></ion-icon>
@@ -64,5 +97,5 @@
           </div>
           <p class="title">Acerca de</p>
         </button>
-      </div>
+      </div> -->
 </ion-content>
