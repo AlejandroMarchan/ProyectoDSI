@@ -26,8 +26,10 @@
         <ion-button expand="block" (click)="login()">Iniciar Sesión</ion-button>
       </ion-col>
     </ion-row>
+    <ion-row  id="Register" (click)="abrirRegistro()">
+      <ion-col>
+        <ion-button color="dark" expand="block"><p style="font-size: 15px;S">Si no tienes cuenta, regístrate pulsando aquí</p></ion-button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-  <div  id="Register" (click)="abrirRegistro()">
-    <ion-button round color="dark"  expand="block" style="margin:5%;">Si no tienes cuenta, regístrate pulsando aquí</ion-button>
-  </div>
 </ion-content>
