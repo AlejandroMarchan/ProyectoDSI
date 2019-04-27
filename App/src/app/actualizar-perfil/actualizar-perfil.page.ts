@@ -42,6 +42,7 @@ telefono: number = null;
     this.usuarioService.getUsuario(this.username).subscribe(
       async data => {
           let usuario: Usuario = { 
+            dinero: 0,
             username : this.username,
             contrasena: this.password,
             nombre: this.nombre,

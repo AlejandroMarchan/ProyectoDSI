@@ -56,7 +56,8 @@ const routes: Routes = [
    component: PerfilPage },
   { path: 'actualizar-perfil',
    component: ActualizarPerfilPage },
-  { path: 'contrasena', component: ContrasenaPage }
+  { path: 'contrasena', component: ContrasenaPage },  { path: 'ranking', loadChildren: './ranking/ranking.module#RankingPageModule' }
+
 
 
 

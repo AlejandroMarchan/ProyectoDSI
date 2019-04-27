@@ -21,8 +21,8 @@ export class AppComponent {
       icon: 'information-circle'
     },
     {
-      title: 'Carta',
-      url: '/carta',
+      title: 'Ranking',
+      url: '/ranking',
       icon: 'book'
     }
   ];

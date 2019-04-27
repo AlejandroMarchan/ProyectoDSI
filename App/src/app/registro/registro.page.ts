@@ -39,6 +39,7 @@ export class RegistroPage {
         if(!data){
           this.registrado = true;
           let usuario: Usuario = { 
+            dinero: 0,
             username : this.usuario,
             contrasena: this.password,
             nombre: '',
