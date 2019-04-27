@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
+        </ion-buttons>
+        <ion-title>
+          Actualizar Perfil
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input placeholder="Nombre de usuario" type="text" [(ngModel)]="username" ></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input placeholder="Contraseña" type="password" [(ngModel)]="password"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input placeholder="Confirmar Contraseña" type="password" [(ngModel)]="password2"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <ion-input placeholder="Nombre" type="text" [(ngModel)]="nombre"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                <ion-input placeholder="Apellidos" type="text" [(ngModel)]="apellidos"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                  <ion-input placeholder="Telefono" type="number" [(ngModel)]="telefono"></ion-input>
+                </ion-col>
+              </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="actualizar()">Actualizar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+</ion-content>

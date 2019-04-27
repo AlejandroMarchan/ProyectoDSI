@@ -11,14 +11,14 @@ import { NuevoMenuPage } from '../nuevo-menu/nuevo-menu.page';
   templateUrl: './menu-comida.page.html',
   styleUrls: ['./menu-comida.page.scss'],
 })
-export class MenuComidaPage implements OnInit {
+export class MenuComidaPage {
  
   menu: Menu[];
   public editar: boolean = false;
   constructor(private menuService: MenuService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){}
 
  
-  async ngOnInit() {
+  async ionViewWillEnter() {
     this.menuService.getCarta().subscribe( async data => {
       this.menu = data;
     });

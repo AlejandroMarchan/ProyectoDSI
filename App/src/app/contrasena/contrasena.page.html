@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Introduce contraseña
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input placeholder="contraseña" type="password" [(ngModel)]="password"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="block" (click)="AccederActualizar()">Aceptar</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+</ion-content>

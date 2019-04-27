@@ -18,6 +18,8 @@ export class UsuarioService {
 
   public tipo: string = '';
 
+  public dinero:number = 0;
+
   constructor(db: AngularFirestore) {
     this.usuariosCollection = db.collection<Usuario>('usuarios');
 
@@ -36,7 +38,7 @@ export class UsuarioService {
     return this.usuarios;
   }
 
-  getUsuario(id) {
+  getUsuario(id: string) {
     return this.usuariosCollection.doc<Usuario>(id).valueChanges();
   }
 
@@ -48,7 +50,7 @@ export class UsuarioService {
     return this.usuariosCollection.doc(id).set(usuario);
   }
 
-  removeUsuario(id) {
+  removeUsuario(id: string) {
     return this.usuariosCollection.doc(id).delete();
   }
 }

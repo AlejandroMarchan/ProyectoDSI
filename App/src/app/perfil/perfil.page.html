@@ -1,0 +1,23 @@
+<ion-header>
+        <ion-toolbar>
+            <ion-buttons style="margin-bottom: 5px" slot="start">
+                <ion-icon style="font-size: 25px;margin-left:10px" name="arrow-back" button [routerLink]="['/home']"></ion-icon>
+            </ion-buttons>
+            <ion-title id="titulo">
+             Perfil
+            </ion-title>
+          </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+            <p class="text" >Username: {{perfil.username}}</p>
+            <p class="text" >nombre: {{ perfil.nombre }}</p>
+              <p class="text" >apellidos: {{ perfil.apellidos }}</p>
+              <p class="text" >telefono: {{ perfil.telefono }}</p>
+</ion-list>
+<div>
+  <ion-button expand="block" (click)="EditarMenu()">Editar</ion-button>
+</div>
+
+</ion-content>

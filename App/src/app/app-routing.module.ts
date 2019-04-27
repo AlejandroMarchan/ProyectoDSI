@@ -8,6 +8,10 @@ import { CartaPage } from './carta/carta.page';
 import { AnadirPage } from './anadir/anadir.page';
 import { MenuComidaPage } from './menu-comida/menu-comida.page';
 import { NuevoMenuPage } from './nuevo-menu/nuevo-menu.page';
+import { PerfilPage } from './perfil/perfil.page';
+import { ActualizarPerfilPage } from './actualizar-perfil/actualizar-perfil.page';
+import { ContrasenaPage } from './contrasena/contrasena.page';
+
 
 
 const routes: Routes = [
@@ -47,7 +51,15 @@ const routes: Routes = [
   {
     path: 'nuevo-menu',
     component: NuevoMenuPage
-  }
+  },
+  { path: 'perfil',
+   component: PerfilPage },
+  { path: 'actualizar-perfil',
+   component: ActualizarPerfilPage },
+  { path: 'contrasena', component: ContrasenaPage }
+
+
+
 
 
 ];

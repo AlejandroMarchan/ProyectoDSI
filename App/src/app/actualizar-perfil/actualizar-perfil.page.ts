@@ -4,20 +4,25 @@ import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../interfaces/usuario';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.page.html',
-  styleUrls: ['./registro.page.scss'],
+  selector: 'app-actualizar-perfil',
+  templateUrl: './actualizar-perfil.page.html',
+  styleUrls: ['./actualizar-perfil.page.scss'],
 })
-
-export class RegistroPage {
-  public usuario: string = '';
-  public password: string = '';
-  public password2: string = '';
-  public registrado = false;
-
+export class ActualizarPerfilPage implements OnInit{
+perfil: Usuario
+username: string = '';
+password: string = '';
+password2: string = '';
+nombre: string = '';
+apellidos: string = '';
+telefono: number = null;
   constructor(public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController, public toastCtrl: ToastController) { }
-
-  async registro(){
+  async ngOnInit() {  
+    this.usuarioService.getUsuario(this.usuarioService.username).subscribe( async data => {
+      this.perfil = data;
+    });
+  }
+  async actualizar(){
     const alert = await this.alertCtrl.create({
       header: 'Campo vacío',
       message: 'Por favor, rellene todos los campos para iniciar sesión.',
@@ -28,43 +33,30 @@ export class RegistroPage {
       message: 'La segunda contraseña y la primera no coinciden.',
       buttons: ['Vale']
     });
-    if(!this.usuario || !this.password || !this.password2){
+    if(!this.username || !this.password || !this.password2){
       return await alert.present();
     }
     if(this.password!=this.password2){
       return await alert2.present();
     }
-    this.usuarioService.getUsuario(this.usuario).subscribe(
+    this.usuarioService.getUsuario(this.username).subscribe(
       async data => {
-        if(!data){
-          this.registrado = true;
           let usuario: Usuario = { 
-            username : this.usuario,
+            username : this.username,
             contrasena: this.password,
-            nombre: '',
-            apellidos: '',
+            nombre: this.nombre,
+            apellidos: this.apellidos,
             bonos: '',
-            telefono: null,
+            telefono: this.telefono,
             tipo: 'comun'
           };
-          this.usuarioService.addUsuario(usuario, this.usuario);
-          this.usuarioService.username = this.usuario;
-          this.usuarioService.logged = true;
-          this.usuarioService.tipo = data.tipo;
+          this.usuarioService.updateUsuario(usuario, this.username);
           const toast = await this.toastCtrl.create({
-            message: this.usuario + ', su cuenta ha sido creada correctamente',
+            message: this.username + ', su cuenta ha sido actualizada correctamente',
             duration: 2500
           });
           toast.present();
           this.closeModal();
-        }else if(!this.registrado){
-          const usuarioExiste = await this.alertCtrl.create({
-            header: 'Error Nombre Usuario',
-            message: 'El nombre de usuario que introdujo pertenece a otro usuario de la plataforma, por favor elija uno diferente.',
-            buttons: ['Vale']
-          });
-          return await usuarioExiste.present();
-        }
       },
       async error => {
         const toast = await this.toastCtrl.create({
@@ -82,3 +74,4 @@ export class RegistroPage {
     }
 
 }
+
