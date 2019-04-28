@@ -28,35 +28,29 @@
           <ion-icon style="font-size: 100px;text-align: center;" name="list-box"></ion-icon>
           <p class="title">Carta</p>
       </ion-col>
-    </ion-row>
-    <ion-row align-items-center *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged">
-      <ion-col size="6" >
+      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged" >
           <ion-icon style="font-size: 100px;text-align: center;" name="cash"></ion-icon>
-          <p class="title">Bonos</p>
+          <p class="title">Mis Bonos</p>
       </ion-col>
-      <ion-col size="6">
+      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged">
           <ion-icon style="font-size: 100px;text-align: center;" name="basket"></ion-icon>
           <p class="title">Pedidos</p>
       </ion-col>
-    </ion-row>
-    <ion-row align-items-center *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='trabajador' && usuarioService.logged">
-      <ion-col size="6" >
+      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='trabajador' && usuarioService.logged">
           <ion-icon style="font-size: 100px;text-align: center;" name="card"></ion-icon>
-          <p class="title">Canjear Pedidos</p>
+          <p class="title">Canjear Bono</p>
       </ion-col>
-      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged"  [routerLink]="['/perfil']">
+      <ion-col size="6" *ngIf="usuarioService.tipo=='comun' && usuarioService.logged || usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='trabajador' && usuarioService.logged"  [routerLink]="['/perfil']">
         <ion-icon style="font-size: 100px;text-align: center;" name="contact"></ion-icon>
         <p class="title">Perfil</p>
-    </ion-col>
-    </ion-row>
-    <ion-row align-items-center>
-      <ion-col size="6" [routerLink]="['/ranking']">
+      </ion-col>
+      <ion-col size="6" [routerLink]="['/ranking']" *ngIf=" usuarioService.logged">
         <ion-icon style="font-size: 100px;text-align: center;" name="trophy"></ion-icon>
         <p class="title">Ranking</p>
-    </ion-col>
+      </ion-col>
       <ion-col size="6" [routerLink]="['/acerca-de']">
-          <ion-icon style="font-size: 100px;text-align: center;" name="information-circle"></ion-icon>
-          <p class="title">Acerca de</p>
+        <ion-icon style="font-size: 100px;text-align: center;" name="information-circle"></ion-icon>
+        <p class="title">Acerca de</p>
       </ion-col>
     </ion-row>
   </ion-grid>
