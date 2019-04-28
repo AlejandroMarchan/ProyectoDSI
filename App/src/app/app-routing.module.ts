@@ -11,6 +11,7 @@ import { NuevoMenuPage } from './nuevo-menu/nuevo-menu.page';
 import { PerfilPage } from './perfil/perfil.page';
 import { ActualizarPerfilPage } from './actualizar-perfil/actualizar-perfil.page';
 import { ContrasenaPage } from './contrasena/contrasena.page';
+import { RankingPage } from './ranking/ranking.page';
 
 
 
@@ -52,17 +53,22 @@ const routes: Routes = [
     path: 'nuevo-menu',
     component: NuevoMenuPage
   },
-  { path: 'perfil',
-   component: PerfilPage },
-  { path: 'actualizar-perfil',
-   component: ActualizarPerfilPage },
-  { path: 'contrasena', component: ContrasenaPage },  { path: 'ranking', loadChildren: './ranking/ranking.module#RankingPageModule' }
-
-
-
-
-
-
+  {
+    path: 'perfil',
+   component: PerfilPage
+  },
+  {
+    path: 'actualizar-perfil',
+   component: ActualizarPerfilPage
+  },
+  {
+    path: 'contrasena',
+    component: ContrasenaPage
+  },
+  {
+    path: 'ranking',
+    component: RankingPage
+  }
 ];
 
 @NgModule({

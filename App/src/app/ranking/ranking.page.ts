@@ -13,10 +13,8 @@ usuarios: Usuario[];
 puestos: number[];
 
 
-  constructor(private usuarioService: UsuarioService) { }
-
-  async ionViewWillEnter() {
-    this.usuarioService.getUsuarios().subscribe( async data => {
+  constructor(private usuarioService: UsuarioService) {
+    this.usuarioService.getUsuarios().subscribe( data => {
       this.usuarios = data;
       this.usuarios.sort((a,b) => {
         if (a.dinero < b.dinero) {
@@ -30,6 +28,5 @@ puestos: number[];
       });
     });
   }
-
 
 }
