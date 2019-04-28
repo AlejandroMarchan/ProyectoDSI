@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Pedidos_usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <div *ngFor="let item of pedidosusuario">
+        <p class="title" style="font-size: 22px; margin: 0px; ">{{item.num_pedido}}</p>
+        <p class="text" >{{ item.articulo1 }}</p>
+        <p class="text" >{{ item.articulo2 }}</p>
+        <p class="text" >{{ item.articulo3 }}</p>
+        <p class="text" >{{ item.articulo4 }}</p>
+        <p class="text" >{{ item.articulo5 }}</p>
+        <p class="text" >{{ item.articulo6 }}</p>
+        <p class="text" >{{ item.usuario }}</p>
+        <ion-button *ngIf="!pedidoService.finpedido" expand="block" (click)="removePedidos(item.id)">Comanda Lista</ion-button><!--no se muy bien como borrar-->>
+      </div>
+    </ion-list>
+</ion-content>

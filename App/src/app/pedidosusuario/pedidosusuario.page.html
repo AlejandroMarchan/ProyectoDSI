@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Nuevos Pedidos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      
+    <p class="title" style="font-size: 22px; margin: 0px; ">Introduce los platos que deseas</p>
+    <ion-input placeholder="plato1" type="text" [(ngModel)]="art1"></ion-input>
+    <ion-input placeholder="plato2" type="text" [(ngModel)]="art2"></ion-input>
+    <ion-input placeholder="plato3" type="text" [(ngModel)]="art3"></ion-input>
+    <ion-input placeholder="plato1" type="text" [(ngModel)]="art4"></ion-input>
+    <ion-input placeholder="plato2" type="text" [(ngModel)]="art5"></ion-input>
+    <ion-input placeholder="plato3" type="text" [(ngModel)]="art6"></ion-input>
+
+      <ion-button expand="block" (click)="actualizar();" >Actualizar</ion-button>
+    </ion-list>
+
+<div  *ngIf="usuarioService.tipo=='comun'" >
+    <ion-button *ngIf="!pedidosService.editarpedido" expand="block" (click)="EditarPedidos()">Realizar un pedido</ion-button>
+  </div>
+  </div>
+</ion-content>

@@ -15,6 +15,8 @@ export class MenuComidaPage {
  
   menu: Menu[];
   public editar: boolean = false;
+
+  
   constructor(private menuService: MenuService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){}
 
  

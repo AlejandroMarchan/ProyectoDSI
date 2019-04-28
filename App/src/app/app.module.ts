@@ -30,11 +30,12 @@ import { NuevoMenuPage } from './nuevo-menu/nuevo-menu.page';
 import { PerfilPage } from './perfil/perfil.page';
 import { ActualizarPerfilPage } from './actualizar-perfil/actualizar-perfil.page';
 import { ContrasenaPage } from './contrasena/contrasena.page';
-
+//import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
+//import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage],
-  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage],
+  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage/*, PedidosadminPage, PedidosusuarioPage*/],
+entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage/*, PedidosadminPage, PedidosusuarioPage*/],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

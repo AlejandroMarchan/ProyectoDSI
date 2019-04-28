@@ -52,11 +52,27 @@ const routes: Routes = [
     path: 'nuevo-menu',
     component: NuevoMenuPage
   },
-  { path: 'perfil',
-   component: PerfilPage },
-  { path: 'actualizar-perfil',
-   component: ActualizarPerfilPage },
-  { path: 'contrasena', component: ContrasenaPage },  { path: 'ranking', loadChildren: './ranking/ranking.module#RankingPageModule' }
+  { 
+    path: 'perfil',
+    component: PerfilPage 
+  },
+  {
+    path: 'actualizar-perfil',
+    component: ActualizarPerfilPage 
+  },
+  {
+    path: 'contrasena', component: ContrasenaPage 
+  },
+  {
+    path: 'ranking', loadChildren: './ranking/ranking.module#RankingPageModule' 
+  },
+  {
+    path: 'pedidosadmin', loadChildren: './pedidosadmin/pedidosadmin.module#PedidosadminPageModule' 
+  },
+  
+  { 
+    path: 'pedidosusuario', loadChildren: './pedidosusuario/pedidosusuario.module#PedidosusuarioPageModule' 
+  }
 
 
 
