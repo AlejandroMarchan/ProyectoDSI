@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../interfaces/usuario';
 
@@ -9,12 +9,14 @@ import { Usuario } from '../interfaces/usuario';
 })
 
 export class RankingPage {
-usuarios: Usuario[];
-puestos: number[];
 
+  usuarios: Usuario[];
+  puestos: number[];
 
   constructor(private usuarioService: UsuarioService) {
+    console.log('constructor');
     this.usuarioService.getUsuarios().subscribe( data => {
+      console.log(data);
       this.usuarios = data;
       this.usuarios.sort((a,b) => {
         if (a.dinero < b.dinero) {
@@ -24,9 +26,10 @@ puestos: number[];
           return -1;
       }
       return 0;
-
-      });
     });
+    },
+    error => {console.log(error);});
+    console.log('hola');
   }
 
 }

@@ -17,7 +17,7 @@ export class CartaPage {
   public editar: boolean = false;
 
   constructor(private cartaService: CartaService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
-    this.cartaService.getCarta().subscribe( async data => {
+    this.cartaService.getCarta().subscribe( data => {
       this.carta = data;
     });
   }
