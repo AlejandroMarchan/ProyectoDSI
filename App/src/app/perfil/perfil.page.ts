@@ -11,6 +11,9 @@ import { ContrasenaPage } from '../contrasena/contrasena.page';
 })
 export class PerfilPage implements OnInit {
 perfil: Usuario
+oro: boolean = false;
+plata: boolean = false;
+bronce:boolean = false;
   constructor( public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController) {
    
    }
@@ -18,6 +21,15 @@ perfil: Usuario
   async ngOnInit() {  
     this.usuarioService.getUsuario(this.usuarioService.username).subscribe( async data => {
       this.perfil = data;
+      if(this.perfil.dinero<5){
+        this.bronce=true;
+      }else{
+        if(this.perfil.dinero<15){
+          this.plata=true;
+        }else{
+          this.oro=true;
+        }
+      }
     });
   }
   async EditarMenu(){
