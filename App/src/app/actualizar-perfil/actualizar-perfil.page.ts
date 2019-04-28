@@ -25,7 +25,7 @@ telefono: number = null;
   async actualizar(){
     const alert = await this.alertCtrl.create({
       header: 'Campo vacío',
-      message: 'Por favor, rellene todos los campos para iniciar sesión.',
+      message: 'Por favor, rellene los campos obligatorios.',
       buttons: ['Vale']
     });
     const alert2 = await this.alertCtrl.create({
@@ -49,7 +49,7 @@ telefono: number = null;
             apellidos: this.apellidos,
             bonos: '',
             telefono: this.telefono,
-            tipo: 'comun'
+            tipo: data.tipo
           };
           this.usuarioService.updateUsuario(usuario, this.username);
           const toast = await this.toastCtrl.create({
@@ -58,6 +58,7 @@ telefono: number = null;
           });
           toast.present();
           this.closeModal();
+
       },
       async error => {
         const toast = await this.toastCtrl.create({

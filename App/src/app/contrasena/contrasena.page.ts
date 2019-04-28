@@ -31,13 +31,15 @@ export class ContrasenaPage {
     this.usuarioService.getUsuario(this.usuarioService.username).subscribe(
       async data => {
         if(data){
+          this.closeModal(); 
           if(this.password == data.contrasena){
+            
             let editarperfilModal: HTMLIonModalElement = await this.modalCtrl.create({
               component: ActualizarPerfilPage
         });
-        this.closeModal();
+        
         await editarperfilModal.present();
-            
+         
           } else{
             return await ContrasenaIncorrecta.present();
           }

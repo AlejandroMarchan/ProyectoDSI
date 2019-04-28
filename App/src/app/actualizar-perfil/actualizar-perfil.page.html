@@ -13,17 +13,17 @@
     <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-input placeholder="Nombre de usuario" type="text" [(ngModel)]="username" ></ion-input>
+            <ion-input placeholder="Nombre de usuario*" type="text" [(ngModel)]="username" ></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-input placeholder="Contraseña" type="password" [(ngModel)]="password"></ion-input>
+            <ion-input placeholder="Contraseña*" type="password" [(ngModel)]="password"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-input placeholder="Confirmar Contraseña" type="password" [(ngModel)]="password2"></ion-input>
+            <ion-input placeholder="Confirmar Contraseña*" type="password" [(ngModel)]="password2"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -43,6 +43,7 @@
               </ion-row>
         <ion-row>
           <ion-col>
+            <p class="text">* Campos obligatorios</p>
             <ion-button expand="block" (click)="actualizar()">Actualizar</ion-button>
           </ion-col>
         </ion-row>
