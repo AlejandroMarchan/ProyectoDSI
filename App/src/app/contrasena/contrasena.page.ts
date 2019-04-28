@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController, AlertController, ToastController } from '@ionic/angular';
 import { UsuarioService } from '../services/usuario.service';
 import { ActualizarPerfilPage } from '../actualizar-perfil/actualizar-perfil.page';
@@ -31,15 +31,15 @@ export class ContrasenaPage {
     this.usuarioService.getUsuario(this.usuarioService.username).subscribe(
       async data => {
         if(data){
-          this.closeModal(); 
+          this.closeModal();
           if(this.password == data.contrasena){
-            
+
             let editarperfilModal: HTMLIonModalElement = await this.modalCtrl.create({
               component: ActualizarPerfilPage
         });
-        
+
         await editarperfilModal.present();
-         
+
           } else{
             return await ContrasenaIncorrecta.present();
           }
@@ -64,4 +64,3 @@ export class ContrasenaPage {
 
 
 }
-

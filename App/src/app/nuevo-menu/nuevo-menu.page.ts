@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController, AlertController, ToastController } from '@ionic/angular';
-import { CartaService } from '../services/carta.service';
-import { Carta } from '../interfaces/carta';
 import { MenuService } from '../services/menu.service';
 import { Menu } from '../interfaces/menu';
 
@@ -22,7 +20,7 @@ export class NuevoMenuPage{
   public pos3: string = '';
 
   constructor(public menuService: MenuService, public modalCtrl: ModalController, public alertCtrl: AlertController, public toastCtrl: ToastController) { }
-  
+
   async closeModal() {
     await this.modalCtrl.dismiss();
   }
@@ -72,4 +70,3 @@ export class NuevoMenuPage{
       }
     }
 }
-

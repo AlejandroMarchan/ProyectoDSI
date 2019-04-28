@@ -12,19 +12,15 @@ import { NuevoMenuPage } from '../nuevo-menu/nuevo-menu.page';
   styleUrls: ['./menu-comida.page.scss'],
 })
 export class MenuComidaPage {
- 
+
   menu: Menu[];
   public editar: boolean = false;
-
-  
-  constructor(private menuService: MenuService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){}
-
- 
-  async ionViewWillEnter() {
-    this.menuService.getCarta().subscribe( async data => {
+  constructor(private menuService: MenuService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
+    this.menuService.getCarta().subscribe( data => {
       this.menu = data;
     });
   }
+
   async abrirLogin(){
     let loginModal: HTMLIonModalElement = await this.modalCtrl.create({
           component: LoginPage
@@ -41,7 +37,7 @@ export class MenuComidaPage {
 
   async cerrarSesion(){
     this.menuService.editar==false;
-    const alert = await this.alertCtrl.create({  
+    const alert = await this.alertCtrl.create({
       header: 'Cerrar Sesión',
       message: '¿Desea cerrar sesión?',
       buttons: [
