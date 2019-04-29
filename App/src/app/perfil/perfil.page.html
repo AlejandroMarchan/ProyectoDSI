@@ -16,8 +16,16 @@
               <p class="text" >apellidos: {{ perfil.apellidos }}</p>
               <p class="text" >telefono: {{ perfil.telefono }}</p>
 </ion-list>
+<div *ngIf="oro">
+  <ion-img style="text-align: center;" src="../assets/icon/oro.png" height='60' width='120'></ion-img>
+</div>
+<div *ngIf="plata">
+  <ion-img style=" text-align: center;" src="../assets/icon/plata.png" height='60' width='120'></ion-img>
+</div>
+<div *ngIf="bronce">
+  <ion-img style="text-align: center;" src="../assets/icon/bronce.png" height='60' width='120'></ion-img>
+</div>
 <div>
   <ion-button expand="block" (click)="EditarMenu()">Editar</ion-button>
 </div>
-
 </ion-content>
