@@ -3,6 +3,7 @@ import { ModalController, AlertController, ToastController } from '@ionic/angula
 import { LoginPage } from '../login/login.page';
 import { UsuarioService } from '../services/usuario.service';
 import { CartaService } from '../services/carta.service';
+import QRCode from 'qrcode';
 
 @Component({
   selector: 'app-mis-bonos',
@@ -11,8 +12,23 @@ import { CartaService } from '../services/carta.service';
 })
 export class MisBonosPage {
 
+  public generated: string = '';
+
   constructor(public cartaService: CartaService,public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
 
+  }
+
+  displayQrCode() {
+    return this.generated !== '';
+  }
+
+  process() {
+    const qrcode = QRCode;
+    const self = this;
+    qrcode.toDataURL(this.usuarioService.username, { errorCorrectionLevel: 'H' }, function (err, url) {
+      self.generated = url;
+      console.log(err);
+    })
   }
 
   async abrirLogin(){
