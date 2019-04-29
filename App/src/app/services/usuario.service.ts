@@ -24,6 +24,16 @@ export class UsuarioService {
 
   public dinero:number = 0;
 
+  public usuario: Usuario = {
+    contrasena: '',
+    nombre: '',
+    apellidos: '',
+    bonos: 0,
+    dinero: 0,
+    telefono: 0,
+    tipo: '' //admin, comun, trabajador
+  };
+
   constructor(db: AngularFirestore) {
     this.usuariosCollection = db.collection<Usuario>('usuarios');
 

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ModalController, AlertController, ToastController } from '@ionic/angular';
 import { UsuarioService } from '../services/usuario.service';
 import { RegistroPage } from '../registro/registro.page';
+import { MenuService } from '../services/menu.service';
+import { CartaService } from '../services/carta.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,7 @@ export class LoginPage {
   public usuario: string = '';
   public password: string = '';
 
-  constructor(public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController, public toastCtrl: ToastController) {  }
+  constructor(public modalCtrl: ModalController, public cartaService: CartaService, public menuService: MenuService, public usuarioService: UsuarioService, public alertCtrl: AlertController, public toastCtrl: ToastController) {  }
 
   async login(){
     const alert = await this.alertCtrl.create({
@@ -42,12 +44,20 @@ export class LoginPage {
             this.usuarioService.username = this.usuario;
             this.usuarioService.tipo = data.tipo;
             this.usuarioService.bonos = data.bonos;
+            this.usuarioService.usuario = data;
             this.usuarioService.getUsuarios().subscribe(
               data => {
                 console.log(data);
                 this.usuarioService.usuariosActuales = data;
               }
             );
+            this.cartaService.getCarta().subscribe( data => {
+              console.log(data);
+              this.cartaService.cartaActual = data;
+            });
+            this.menuService.getCarta().subscribe( data => {
+              this.menuService.menuActual = data;
+            });
             this.closeModal();
           } else{
             return await loginIncorrecto.present();

@@ -26,7 +26,8 @@
             <ion-card-title style="text-align:center;">Usted tiene {{usuarioService.bonos}} bonos restantes</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-button block (click)="process();">Generar QR del bono</ion-button>
+            <ion-button block (click)="process();" [disabled]="quedanBonos()">Generar QR del bono</ion-button>
+            <ion-button block (click)="comprarBono();">Comprar bonos</ion-button>
             <img *ngIf="displayQrCode()" [src]="generated" />
           </ion-card-content>
         </ion-card>

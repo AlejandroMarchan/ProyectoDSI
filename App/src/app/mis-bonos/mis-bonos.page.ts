@@ -4,6 +4,7 @@ import { LoginPage } from '../login/login.page';
 import { UsuarioService } from '../services/usuario.service';
 import { CartaService } from '../services/carta.service';
 import QRCode from 'qrcode';
+import { Usuario } from '../interfaces/usuario';
 
 @Component({
   selector: 'app-mis-bonos',
@@ -29,6 +30,18 @@ export class MisBonosPage {
       self.generated = url;
       console.log(err);
     })
+  }
+
+  quedanBonos(){
+    if(this.usuarioService.bonos > 0){
+      return false;
+    }
+    return true;
+  }
+
+  comprarBono(){
+    this.usuarioService.usuario.bonos++;
+    this.usuarioService.updateUsuario(this.usuarioService.usuario, this.usuarioService.username);
   }
 
   async abrirLogin(){

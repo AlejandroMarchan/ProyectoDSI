@@ -13,6 +13,8 @@ import { Usuario } from '../interfaces/usuario';
 })
 export class CanjearBonosPage {
 
+  public restado = false;
+
   constructor(private qrScanner: QRScanner, public cartaService: CartaService,public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
 
   }
@@ -31,14 +33,18 @@ export class CanjearBonosPage {
              let usuario: Usuario;
              this.usuarioService.getUsuario(text).subscribe(
                data => {
-                 usuario = data;
-                 usuario.bonos--;
-                 this.usuarioService.updateUsuario(usuario, text)
-                 this.qrScanner.hide(); // hide camera preview
-                 scanSub.unsubscribe(); // stop scanning
+                 if(!this.restado){
+                   usuario = data;
+                   usuario.bonos--;
+                   this.usuarioService.updateUsuario(usuario, text);
+                   this.restado = true;
+                   this.qrScanner.hide(); // hide camera preview
+                   scanSub.unsubscribe(); // stop scanning
+                  }
                }
              );
            });
+           this.qrScanner.show();
 
          } else if (status.denied) {
            // camera permission was permanently denied

@@ -48,10 +48,10 @@ export class RegistroPage {
             telefono: null,
             tipo: 'comun'
           };
+          this.usuarioService.usuario = usuario;
           this.usuarioService.addUsuario(usuario, this.usuario);
           this.usuarioService.username = this.usuario;
           this.usuarioService.logged = true;
-          this.usuarioService.tipo = 'comun';
           const toast = await this.toastCtrl.create({
             message: this.usuario + ', su cuenta ha sido creada correctamente',
             duration: 2500

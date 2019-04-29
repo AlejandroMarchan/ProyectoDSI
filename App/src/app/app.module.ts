@@ -25,6 +25,8 @@ import { CanjearBonosPage } from './canjear-bonos/canjear-bonos.page';
 
 // Servicios
 import { UsuarioService } from './services/usuario.service';
+import { MenuService } from './services/menu.service';
+import { CartaService } from './services/carta.service';
 
 // Modulos
 import { FormsModule } from '@angular/forms';
@@ -51,6 +53,9 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    UsuarioService,
+    MenuService,
+    CartaService,
     QRScanner
   ],
   bootstrap: [AppComponent]
