@@ -1,30 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
+    <ion-buttons style="margin-bottom: 5px" slot="start">
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Nuevos Pedidos
+    <ion-title id="titulo">
+      UniMeal
     </ion-title>
+    <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Iniciar Sesión</b></p>
+    </div>
+    <div *ngIf="usuarioService.logged" id="logIn" (click)="cerrarSesion()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-out"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Cerrar Sesión</b></p>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-      
-    <p class="title" style="font-size: 22px; margin: 0px; ">Introduce los platos que deseas</p>
-    <ion-input placeholder="plato1" type="text" [(ngModel)]="art1"></ion-input>
-    <ion-input placeholder="plato2" type="text" [(ngModel)]="art2"></ion-input>
-    <ion-input placeholder="plato3" type="text" [(ngModel)]="art3"></ion-input>
-    <ion-input placeholder="plato1" type="text" [(ngModel)]="art4"></ion-input>
-    <ion-input placeholder="plato2" type="text" [(ngModel)]="art5"></ion-input>
-    <ion-input placeholder="plato3" type="text" [(ngModel)]="art6"></ion-input>
-
-      <ion-button expand="block" (click)="actualizar();" >Actualizar</ion-button>
-    </ion-list>
-
-<div  *ngIf="usuarioService.tipo=='comun'" >
-    <ion-button *ngIf="!pedidosService.editarpedido" expand="block" (click)="EditarPedidos()">Realizar un pedido</ion-button>
-  </div>
-  </div>
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="6" [routerLink]="['/menu-comida']">
+        Hola
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

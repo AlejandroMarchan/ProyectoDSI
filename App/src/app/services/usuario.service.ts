@@ -12,6 +12,8 @@ export class UsuarioService {
 
   private usuarios: Observable<Usuario[]>;
 
+  public usuariosActuales: Usuario[];
+
   public logged: boolean = false;
 
   public username: string = '';

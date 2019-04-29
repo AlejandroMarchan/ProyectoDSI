@@ -14,22 +14,23 @@ export class RankingPage {
   puestos: number[];
 
   constructor(private usuarioService: UsuarioService) {
-    console.log('constructor');
-    this.usuarioService.getUsuarios().subscribe( data => {
-      console.log(data);
-      this.usuarios = data;
-      this.usuarios.sort((a,b) => {
-        if (a.dinero < b.dinero) {
-          return 1;
+
+    this.usuarioService.getUsuarios().subscribe(
+      data => {
+        console.log(data);
+        this.usuarioService.usuariosActuales = data;
+      }
+    );
+    this.usuarios = this.usuarioService.usuariosActuales;
+    this.usuarios.sort((a,b) => {
+      if (a.dinero < b.dinero) {
+        return 1;
       }
       if (a.dinero > b.dinero) {
           return -1;
       }
       return 0;
     });
-    },
-    error => {console.log(error);});
-    console.log('hola');
   }
 
 }

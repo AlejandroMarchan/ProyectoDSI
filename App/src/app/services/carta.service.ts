@@ -11,7 +11,9 @@ export class CartaService {
   private cartaCollection: AngularFirestoreCollection<Carta>;
 
   private carta: Observable<Carta[]>;
+  public cartaActual: Carta[];
   public editar: boolean = false;
+  public ultimaComida:string = '';
 
   constructor(db: AngularFirestore) {
     this.cartaCollection = db.collection<Carta>('carta');

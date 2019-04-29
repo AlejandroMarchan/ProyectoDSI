@@ -6,5 +6,4 @@ export interface Pedidos {
     articulo4: string,
     articulo5: string,
     articulo6: string,
-    usuario: string,
   }

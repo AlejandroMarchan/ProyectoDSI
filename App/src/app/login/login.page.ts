@@ -41,6 +41,12 @@ export class LoginPage {
             this.usuarioService.logged = true;
             this.usuarioService.username = this.usuario;
             this.usuarioService.tipo = data.tipo;
+            this.usuarioService.getUsuarios().subscribe(
+              data => {
+                console.log(data);
+                this.usuarioService.usuariosActuales = data;
+              }
+            );
             this.closeModal();
           } else{
             return await loginIncorrecto.present();

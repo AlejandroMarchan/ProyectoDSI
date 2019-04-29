@@ -11,22 +11,6 @@ import { CartaService } from '../services/carta.service';
 })
 export class HomePage {
 
-  public copiaVuelos: {
-    fechaSalida: Date,
-    precio: number,
-    reservado: boolean,
-    origen: {
-      ciudad: string,
-      bandera: string
-    },
-    destino: {
-      ciudad: string,
-      bandera: string
-    }
-  } [];
-
-  public paises;
-
   constructor(public cartaService: CartaService,public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
 
   }

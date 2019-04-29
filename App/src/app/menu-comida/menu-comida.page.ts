@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController, AlertController, ToastController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
 import { UsuarioService } from '../services/usuario.service';
@@ -17,8 +17,9 @@ export class MenuComidaPage {
   public editar: boolean = false;
   constructor(private menuService: MenuService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
     this.menuService.getCarta().subscribe( data => {
-      this.menu = data;
+      this.menuService.menuActual = data;
     });
+    this.menu = this.menuService.menuActual;
   }
 
   async abrirLogin(){

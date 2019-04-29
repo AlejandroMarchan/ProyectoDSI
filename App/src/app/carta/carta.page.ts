@@ -15,11 +15,10 @@ export class CartaPage {
 
   carta: Carta[];
   public editar: boolean = false;
+  public datosCargados: boolean = false;
 
   constructor(private cartaService: CartaService, public toastCtrl: ToastController, public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController){
-    this.cartaService.getCarta().subscribe( data => {
-      this.carta = data;
-    });
+    this.cargarDatos();
   }
 
   async abrirLogin(){
@@ -30,9 +29,11 @@ export class CartaPage {
   }
   async EditarCarta(){
     this.cartaService.editar=true;
+    this.cargarDatos();
   }
   async Borrar(item: Carta){
     this.cartaService.removeCarta(item.comida);
+    this.cargarDatos();
   }
   async Anadir(){
     let anadirModal: HTMLIonModalElement = await this.modalCtrl.create({
@@ -41,6 +42,15 @@ export class CartaPage {
     await anadirModal.present();
   }
 
+  cargarDatos(){
+    this.cartaService.getCarta().subscribe( data => {
+      console.log(data);
+      this.cartaService.cartaActual = data;
+    });
+    this.carta = this.cartaService.cartaActual;
+    console.log('cargado');
+    this.datosCargados = true;
+  }
 
   async cerrarSesion(){
     this.cartaService.editar==false;

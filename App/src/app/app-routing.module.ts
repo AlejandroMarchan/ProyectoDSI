@@ -12,6 +12,8 @@ import { PerfilPage } from './perfil/perfil.page';
 import { ActualizarPerfilPage } from './actualizar-perfil/actualizar-perfil.page';
 import { ContrasenaPage } from './contrasena/contrasena.page';
 import { RankingPage } from './ranking/ranking.page';
+import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
+import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
 
 
 
@@ -53,40 +55,33 @@ const routes: Routes = [
     path: 'nuevo-menu',
     component: NuevoMenuPage
   },
-  { 
+  {
     path: 'perfil',
-    component: PerfilPage 
+    component: PerfilPage
   },
   {
     path: 'actualizar-perfil',
-    component: ActualizarPerfilPage 
+    component: ActualizarPerfilPage
   },
   {
-    path: 'contrasena', component: ContrasenaPage 
+    path: 'contrasena',
+    component: ContrasenaPage
   },
   {
-    path: 'ranking', loadChildren: './ranking/ranking.module#RankingPageModule' 
+    path: 'pedidosadmin',
+    component: PedidosadminPage
   },
   {
-    path: 'pedidosadmin', loadChildren: './pedidosadmin/pedidosadmin.module#PedidosadminPageModule' 
+    path: 'pedidosusuario',
+    component: PedidosusuarioPage
   },
-  
-  { 
-    path: 'pedidosusuario', loadChildren: './pedidosusuario/pedidosusuario.module#PedidosusuarioPageModule' 
-  },
-
-
-
-
-
-
   {
     path: 'perfil',
-   component: PerfilPage
+    component: PerfilPage
   },
   {
     path: 'actualizar-perfil',
-   component: ActualizarPerfilPage
+    component: ActualizarPerfilPage
   },
   {
     path: 'contrasena',

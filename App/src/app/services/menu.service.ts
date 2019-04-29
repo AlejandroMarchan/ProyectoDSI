@@ -12,6 +12,7 @@ export class MenuService {
 
   private menu: Observable<Menu[]>;
   public editar: boolean = false;
+  public menuActual: Menu[];
 
   constructor(db: AngularFirestore) {
     this.menuCollection = db.collection<Menu>('menu');

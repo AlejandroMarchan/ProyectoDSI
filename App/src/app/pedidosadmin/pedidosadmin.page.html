@@ -1,26 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-icon style="font-size: 25px;margin-left:10px" name="close" (click)="closeModal();"></ion-icon>
+    <ion-buttons style="margin-bottom: 5px" slot="start">
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Pedidos_usuario
+    <ion-title id="titulo">
+      UniMeal
     </ion-title>
+    <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Iniciar Sesión</b></p>
+    </div>
+    <div *ngIf="usuarioService.logged" id="logIn" (click)="cerrarSesion()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-out"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Cerrar Sesión</b></p>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-list>
-      <div *ngFor="let item of pedidosusuario">
-        <p class="title" style="font-size: 22px; margin: 0px; ">{{item.num_pedido}}</p>
-        <p class="text" >{{ item.articulo1 }}</p>
-        <p class="text" >{{ item.articulo2 }}</p>
-        <p class="text" >{{ item.articulo3 }}</p>
-        <p class="text" >{{ item.articulo4 }}</p>
-        <p class="text" >{{ item.articulo5 }}</p>
-        <p class="text" >{{ item.articulo6 }}</p>
-        <p class="text" >{{ item.usuario }}</p>
-        <ion-button *ngIf="!pedidoService.finpedido" expand="block" (click)="removePedidos(item.id)">Comanda Lista</ion-button><!--no se muy bien como borrar-->>
-      </div>
-    </ion-list>
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="6" [routerLink]="['/menu-comida']">
+        Hola
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

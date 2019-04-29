@@ -20,6 +20,8 @@ import { PerfilPage } from './perfil/perfil.page';
 import { ActualizarPerfilPage } from './actualizar-perfil/actualizar-perfil.page';
 import { ContrasenaPage } from './contrasena/contrasena.page';
 import { RankingPage } from './ranking/ranking.page';
+import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
+import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
 
 // Servicios
 import { UsuarioService } from './services/usuario.service';
@@ -31,12 +33,10 @@ import { HttpModule }    from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-//import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
-//import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage/*, PedidosadminPage, PedidosusuarioPage*/],
-entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage/*, PedidosadminPage, PedidosusuarioPage*/],
+  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage],
+entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
