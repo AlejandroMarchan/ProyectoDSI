@@ -46,7 +46,7 @@ export class AnadirPage{
         }else if(this.comida != this.cartaService.ultimaComida){
           const comidaExiste = await this.alertCtrl.create({
             header: 'Error Nombre Comida',
-            message: 'El nombre de comida que introdujo pertenece a otro comida de la carta, por favor elija uno diferente.',
+            message: 'El nombre de comida que introdujo pertenece a otra comida de la carta, por favor elija uno diferente.',
             buttons: ['Vale']
           });
           return await comidaExiste.present();
