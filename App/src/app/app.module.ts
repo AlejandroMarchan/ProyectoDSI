@@ -20,8 +20,6 @@ import { PerfilPage } from './perfil/perfil.page';
 import { ActualizarPerfilPage } from './actualizar-perfil/actualizar-perfil.page';
 import { ContrasenaPage } from './contrasena/contrasena.page';
 import { RankingPage } from './ranking/ranking.page';
-import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
-import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
 import { MisBonosPage } from './mis-bonos/mis-bonos.page';
 import { CanjearBonosPage } from './canjear-bonos/canjear-bonos.page';
 
@@ -35,10 +33,11 @@ import { HttpModule }    from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage, MisBonosPage, CanjearBonosPage],
-  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage, MisBonosPage, CanjearBonosPage],
+  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, MisBonosPage, CanjearBonosPage],
+  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, MisBonosPage, CanjearBonosPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -52,7 +51,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    UsuarioService
+    QRScanner
   ],
   bootstrap: [AppComponent]
 })

@@ -2,7 +2,7 @@
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>UniMeal</name>
     <description>Con la tripa llena se estudi mejor</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <author email="100363752@alumnos.uc3m.es" href="http://uniMeal.com/">UniMeal Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

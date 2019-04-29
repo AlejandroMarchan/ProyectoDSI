@@ -20,8 +20,12 @@
 <ion-content>
   <ion-grid>
     <ion-row align-items-center>
-      <ion-col size="6" [routerLink]="['/menu-comida']">
-        {{usuarioService.bonos}}
+      <ion-col>
+        <ion-card style="text-align:center;">
+          <ion-card-content>
+            <ion-button block (click)="escanearCodigoQR();">Escanear código QR</ion-button>
+          </ion-card-content>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

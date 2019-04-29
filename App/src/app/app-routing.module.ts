@@ -12,8 +12,6 @@ import { PerfilPage } from './perfil/perfil.page';
 import { ActualizarPerfilPage } from './actualizar-perfil/actualizar-perfil.page';
 import { ContrasenaPage } from './contrasena/contrasena.page';
 import { RankingPage } from './ranking/ranking.page';
-import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
-import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
 import { MisBonosPage } from './mis-bonos/mis-bonos.page';
 import { CanjearBonosPage } from './canjear-bonos/canjear-bonos.page';
 
@@ -68,14 +66,6 @@ const routes: Routes = [
   {
     path: 'contrasena',
     component: ContrasenaPage
-  },
-  {
-    path: 'pedidosadmin',
-    component: PedidosadminPage
-  },
-  {
-    path: 'pedidosusuario',
-    component: PedidosusuarioPage
   },
   {
     path: 'perfil',
