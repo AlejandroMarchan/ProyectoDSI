@@ -28,7 +28,7 @@
           <ion-icon style="font-size: 100px;text-align: center;" name="list-box"></ion-icon>
           <p class="title">Carta</p>
       </ion-col>
-      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged" >
+      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='comun' && usuarioService.logged" [routerLink]="['/mis-bonos']">
           <ion-icon style="font-size: 100px;text-align: center;" name="cash"></ion-icon>
           <p class="title">Mis Bonos</p>
       </ion-col>
@@ -36,7 +36,7 @@
           <ion-icon style="font-size: 100px;text-align: center;" name="basket"></ion-icon>
           <p class="title">Pedidos</p>
       </ion-col>
-      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='trabajador' && usuarioService.logged">
+      <ion-col size="6" *ngIf="usuarioService.tipo=='admin' && usuarioService.logged || usuarioService.tipo=='trabajador' && usuarioService.logged"[routerLink]="['/canjear-bonos']">
           <ion-icon style="font-size: 100px;text-align: center;" name="card"></ion-icon>
           <p class="title">Canjear Bono</p>
       </ion-col>

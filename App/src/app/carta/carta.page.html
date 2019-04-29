@@ -20,24 +20,24 @@
 <ion-content *ngIf="datosCargados" padding>
   <ion-grid>
     <ion-row>
-      <ion-col col-4>
+      <ion-col>
         <p class="title" style="font-size: 22px; margin: 0px; " ><b>Comida</b></p>
       </ion-col>
-      <ion-col col-4>
+      <ion-col>
         <p class="title" style="font-size: 22px; margin: 0px; "><b>Precio</b></p>
       </ion-col>
-      <ion-col *ngIf="cartaService.editar" col-4>
+      <ion-col *ngIf="cartaService.editar">
         <p class="title" style="font-size: 22px; margin: 0px; "><b>Borrar</b></p>
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let item of carta">
-      <ion-col col-4>
+      <ion-col>
         <p class="text">{{ item.comida }}</p>
       </ion-col>
-      <ion-col col-4>
+      <ion-col>
         <p class="text">{{ item.precio }} €</p>
       </ion-col>
-      <ion-col style="text-align:center;" *ngIf="cartaService.editar" col-4>
+      <ion-col style="text-align:center;" *ngIf="cartaService.editar">
         <ion-icon style="padding-top: 10px; font-size:25px" name="trash" (click)="Borrar(item)"></ion-icon>
       </ion-col>
     </ion-row>

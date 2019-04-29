@@ -6,7 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-// Componentes
+// Páginas
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginPage } from './login/login.page';
@@ -22,6 +22,8 @@ import { ContrasenaPage } from './contrasena/contrasena.page';
 import { RankingPage } from './ranking/ranking.page';
 import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
 import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
+import { MisBonosPage } from './mis-bonos/mis-bonos.page';
+import { CanjearBonosPage } from './canjear-bonos/canjear-bonos.page';
 
 // Servicios
 import { UsuarioService } from './services/usuario.service';
@@ -35,8 +37,8 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage],
-entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage],
+  declarations: [AppComponent, LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage, MisBonosPage, CanjearBonosPage],
+  entryComponents: [LoginPage, HomePage, AcercaDePage, RegistroPage, CartaPage, AnadirPage, MenuComidaPage, NuevoMenuPage, PerfilPage, ActualizarPerfilPage, ContrasenaPage, RankingPage, PedidosadminPage, PedidosusuarioPage, MisBonosPage, CanjearBonosPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

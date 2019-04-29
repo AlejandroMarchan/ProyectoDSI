@@ -41,6 +41,7 @@ export class LoginPage {
             this.usuarioService.logged = true;
             this.usuarioService.username = this.usuario;
             this.usuarioService.tipo = data.tipo;
+            this.usuarioService.bonos = data.bonos;
             this.usuarioService.getUsuarios().subscribe(
               data => {
                 console.log(data);

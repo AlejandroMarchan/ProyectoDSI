@@ -3,7 +3,7 @@ export interface Usuario {
   contrasena: string,
   nombre: string,
   apellidos: string,
-  bonos: string,
+  bonos: number,
   dinero: number,
   telefono: number,
   tipo: string //admin, comun, trabajador

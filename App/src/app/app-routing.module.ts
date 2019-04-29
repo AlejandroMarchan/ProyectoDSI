@@ -14,6 +14,8 @@ import { ContrasenaPage } from './contrasena/contrasena.page';
 import { RankingPage } from './ranking/ranking.page';
 import { PedidosadminPage } from './pedidosadmin/pedidosadmin.page';
 import { PedidosusuarioPage } from './pedidosusuario/pedidosusuario.page';
+import { MisBonosPage } from './mis-bonos/mis-bonos.page';
+import { CanjearBonosPage } from './canjear-bonos/canjear-bonos.page';
 
 
 
@@ -90,6 +92,14 @@ const routes: Routes = [
   {
     path: 'ranking',
     component: RankingPage
+  },
+  {
+    path: 'mis-bonos',
+    component: MisBonosPage
+  },
+  {
+    path: 'canjear-bonos',
+    component: CanjearBonosPage
   }
 ];
 

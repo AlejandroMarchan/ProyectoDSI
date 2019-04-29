@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons style="margin-bottom: 5px" slot="start">
+        <ion-icon style="font-size: 25px;margin-left:10px" name="arrow-back" button [routerLink]="['/home']"></ion-icon>
+    </ion-buttons>
+    <ion-title id="titulo">
+      UniMeal
+    </ion-title>
+    <div *ngIf="!usuarioService.logged" id="logIn" (click)="abrirLogin()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-in"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Iniciar Sesión</b></p>
+    </div>
+    <div *ngIf="usuarioService.logged" id="logIn" (click)="cerrarSesion()">
+      <ion-icon style="font-size: 25px; margin-left: 27px;" name="log-out"></ion-icon>
+      <p style="font-size: 12px; margin: 0px; padding: 0px;"><b>Cerrar Sesión</b></p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="6" [routerLink]="['/menu-comida']">
+        {{usuarioService.bonos}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

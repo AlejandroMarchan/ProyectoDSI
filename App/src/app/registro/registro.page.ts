@@ -44,7 +44,7 @@ export class RegistroPage {
             contrasena: this.password,
             nombre: '',
             apellidos: '',
-            bonos: '',
+            bonos: 0,
             telefono: null,
             tipo: 'comun'
           };

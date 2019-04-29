@@ -17,7 +17,7 @@ nombre: string = '';
 apellidos: string = '';
 telefono: number = null;
   constructor(public modalCtrl: ModalController, public usuarioService: UsuarioService, public alertCtrl: AlertController, public toastCtrl: ToastController) { }
-  async ngOnInit() {  
+  async ngOnInit() {
     this.usuarioService.getUsuario(this.usuarioService.username).subscribe( async data => {
       this.perfil = data;
     });
@@ -41,13 +41,13 @@ telefono: number = null;
     }
     this.usuarioService.getUsuario(this.username).subscribe(
       async data => {
-          let usuario: Usuario = { 
+          let usuario: Usuario = {
             dinero: 0,
             username : this.username,
             contrasena: this.password,
             nombre: this.nombre,
             apellidos: this.apellidos,
-            bonos: '',
+            bonos: 0,
             telefono: this.telefono,
             tipo: data.tipo
           };
@@ -76,4 +76,3 @@ telefono: number = null;
     }
 
 }
-

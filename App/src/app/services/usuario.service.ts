@@ -20,6 +20,8 @@ export class UsuarioService {
 
   public tipo: string = '';
 
+  public bonos: number = 0;
+
   public dinero:number = 0;
 
   constructor(db: AngularFirestore) {
